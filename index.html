@@ -8,7 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
     <link rel="stylesheet" href="css/index.css">
+    <script src="scripts/index.js" defer></script>
 </head>
 <body>
     <div class="demo-mod">
@@ -30,5 +32,32 @@
     <footer>
         <p>© 2026 Sentrivo | Automatic deploy</p>
     </footer>
+    <section id="login">
+        <div class="login-content">
+            <div class="login-head">
+            <i class="fa-solid fa-xmark exit-cross"></i>
+            <img src="asset/img/avatar/avatar.png" alt="avatar">
+            </div>
+            <form class="login-form">
+                <div class="input-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Email address">
+                </div>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="login-option">
+                    <label for="remember">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#">Forget Password ?</a>
+                </div>
+                <button type="submit" class="connexion">Connexion</button>
+            </form>
+        </div>
+    </section>
+    <section class="register"></section>
 </body>
 </html>

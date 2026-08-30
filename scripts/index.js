@@ -1,24 +1,45 @@
-//Login modal open/close
-const loginBtn = document.querySelector(".login");
-const loginModal = document.getElementById("login")
-const exitLoginModal = document.querySelector(".exit-cross")
+//Modal management
+const modalOpenBtn = document.querySelectorAll(".modalOpen");
+const modals = document.querySelectorAll(".modal")
+const exitModal = document.querySelectorAll(".exit-cross")
 
-loginBtn.addEventListener("click", () => {
-    loginModal.classList.add("active")
-})
+//Open modal from trigger button
 
-exitLoginModal.addEventListener("click", () => {
-    loginModal.classList.remove("active")
-})
+for(const modalOpen of modalOpenBtn) {
+    modalOpen.addEventListener("click", () => {
+        const dataModal = modalOpen.dataset.modal;
+        const modal = document.getElementById(dataModal)
+        modal.classList.add("active")
+    })
+}
 
-loginModal.addEventListener("click", (event) => {
-    if(event.target === loginModal) {
-        loginModal.classList.remove("active")
-    }    
-})
+//Close modal with close button
 
-document.addEventListener("keydown", (event) => {
-    if(event.key === "Escape" ) {
-        loginModal.classList.remove("active")
+for(const exitCross of exitModal) {
+    exitCross.addEventListener("click", (event) => {
+    const exit = event.target.closest(".modal")
+    if(exit) {
+        exit.classList.remove("active")
     }
 })
+}
+
+//Close modal by clicking outside the content
+
+for(const modal of modals) {
+    modal.addEventListener("click", (event) => {
+        if(event.target === modal) {
+            modal.classList.remove("active")
+        }
+    })
+}
+
+//Close modal by clicking escape key
+
+for(const modal of modals){
+    document.addEventListener("keydown", (event) => {
+        if(event.key === "Escape") {
+            modal.classList.remove("active")
+        }
+    })
+}

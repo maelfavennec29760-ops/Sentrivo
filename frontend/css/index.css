@@ -12,6 +12,8 @@ body {
     flex-direction: column;
 }
 
+
+
 .demo-mod {
     display: flex;
     justify-content: flex-end;
@@ -108,7 +110,36 @@ header .header-text {
 
     backdrop-filter: blur(20px);
 }
+#login {
+    flex-direction: column;
+    gap: 10px;    
+}
 
+.container-errorAuth {
+    display: none;
+    width: 200px;
+    background: rgba(18, 24, 45);
+    border: 2px solid #6D28D9;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+
+    align-items: center;
+    gap: 15px;
+    padding: 0 15px;
+}
+
+.container-errorAuth.active {
+    display: flex;
+}
+.errorI {
+    color: #6D28D9;
+    font-size: 20px;
+}
+.errorAuth {
+    padding: 0;
+    color: white;
+    padding: 5px 10px;
+}
 .register-content {
     min-height: 630px;
 }

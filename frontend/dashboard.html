@@ -1,11 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="asset/img/logo/Sentrivo_logo.png">
+    <title>Sentrivo | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="./css/dashboard.css">
 </head>
+
 <body>
-    <h1>Connected to Sentrivo Dashboard</h1>
+    <aside>
+        <div class="top-aside">
+            <img src="./asset/img/logo/Sentrivo_logo_HQ.png" alt="">
+            <h1>Sentrivo</h1>
+        </div>
+        <nav>
+            <a href="">
+                <i class="fa-solid fa-display"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="">
+                <i class="fa-brands fa-html5"></i>
+                <span>Websites</span>
+            </a>
+            <a href="">
+                <i class="fa-regular fa-bell"></i>
+                <span>Alert</span>
+            </a>
+            <a href="">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span>Incidents</span>
+            </a>
+            <a href="">
+                <i class="fa-regular fa-file-lines"></i>
+                <span>Reports</span>
+            </a>
+            <a href="">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="logout">
+            <a href="" id="logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+    <div class="content">
+        <header>
+            <div class="header-left">
+                <div class="header-text">
+                    <p class="hello">Hello Admin 👋</p>
+                    <p class="text">Welcome to Sentrivo, your favorite website dashboard.
+                    </p>
+                </div>
+            </div>
+            <div class="header-right">
+                <form>
+                    <div class="searchWebsite">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" class="inputWebsite" placeholder="Search for a website...">
+                    </div>
+                    <button class="searchWebsite-btn">
+                        <i class="fa-solid fa-plus"></i>
+                        Add a Website
+                    </button>
+                </form>
+                <select class="selectTime">
+                    <option>Today</option>
+                    <option>Last Week</option>
+                    <option>Last Month</option>
+                    <option>One Year</option>
+                </select>
+            </div>
+        </header>
+        <main>
+            <section id="stats-section">
+                <article class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div class="stats-content">
+                        <p class="stats-title">Online websites</p>
+                        <h2 class="stats-value">4 / 5</h2>
+                        <div class="stats-change">
+                            <span class="positive">↑ +0%</span>
+                                <span>vs. last week</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div class="stats-content">
+                        <p class="stats-title">Average response time</p>
+                        <h2 class="stats-value">342 ms</h2>
+                        <div class="stats-change">
+                            <span class="positive">↓ -12%</span>
+                                <span>vs. last week</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="stats-content">
+                        <p class="stats-title">Incidents</p>
+                        <h2 class="stats-value">2</h2>
+                        <div class="stats-change">
+                            <span class="positive">↑ +100%</span>
+                                <span>vs. last week</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="stats-content">
+                        <p class="stats-title">Global uptime</p>
+                        <h2 class="stats-value">99.83%</h2>
+                        <div class="stats-change">
+                            <span class="positive">↑ +0.2%</span>
+                                <span>vs. last week</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section id="global-info">
+                <article class="global-card">
+                    <div class="global-card-text">
+                        <h2>Your websites</h2>
+                        <select name="websit-select" id="websit-select">
+                            <option value="">All website</option>
+                            <option value="">*******</option>
+                            <option value="">*******</option>
+                            <option value="">*******</option>
+                        </select>
+                    </div>
+                    <div class="global-card-graph">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident temporibus aliquid quis minima dolorem obcaecati, quia fuga doloribus iste libero nemo atque officiis sit in eos quidem quam autem quasi.</p>
+                    </div>
+                </article>
+                <article class="global-card">
+                    <div class="global-card-text">
+                        <h2>Latest Incidents</h2>
+                        <select name="response-select" id="uptime-select">
+                            <option value="">All website</option>
+                            <option value="">*******</option>
+                            <option value="">*******</option>
+                            <option value="">*******</option>
+                        </select>
+                    </div>
+                    <div class="global-card-graph">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident temporibus aliquid quis minima dolorem obcaecati, quia fuga doloribus iste libero nemo atque officiis sit in eos quidem quam autem quasi.</p>
+                    </div>
+                </article>
+            </section>
+                        <section id="global-info">
+                <article class="global-card">
+                    <div class="global-card-text">
+                        <h2>Response time</h2>
+                        <select name="websit-select" id="websit-select">
+                            <option value="">All website</option>
+                            <option value="">*******</option>
+                            <option value="">*******</option>
+                            <option value="">*******</option>
+                        </select>
+                    </div>
+                    <div class="global-card-graph">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident temporibus aliquid quis minima dolorem obcaecati, quia fuga doloribus iste libero nemo atque officiis sit in eos quidem quam autem quasi.</p>
+                    </div>
+                </article>
+                <article class="global-card">
+                    <div class="global-card-text">
+                        <h2>Uptime</h2>
+                        <select name="response-select" id="uptime-select">
+                            <option value="">All website</option>
+                            <option value="">*******</option>
+                            <option value="">*******</option>
+                            <option value="">*******</option>
+                        </select>
+                    </div>
+                    <div class="global-card-graph">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident temporibus aliquid quis minima dolorem obcaecati, quia fuga doloribus iste libero nemo atque officiis sit in eos quidem quam autem quasi.</p>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <article class="footer-info">
+                    <h3>Sentrivo | Keep an eye on what matters.</h3>
+                </article>
+                <article class="footer-link">
+                    <nav>
+                        <a href="">Documentation</a>
+                        <a href="">Support</a>
+                        <a href="">Status</a>
+                    </nav>
+                    <p>v0.0.1</p>
+                </article>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>

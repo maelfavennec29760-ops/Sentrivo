@@ -9,10 +9,11 @@ await checkDatabaseConnection();
 
 const app = express();
 app.use(express.json());
+app.use('/uploads', express.static("uploads"));
 
 app.use('/api/auth', router);
-app.use('/api/websites', routerWebsite)
-app.use('/api/visitorLog', routerVisitorLog)
+app.use('/api/websites', routerWebsite);
+app.use('/api/visitorLog', routerVisitorLog);
 
 app.listen(3000, () => {
     console.log("🚀 Server listening on port 3000")

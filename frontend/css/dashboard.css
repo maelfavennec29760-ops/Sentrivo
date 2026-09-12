@@ -177,7 +177,7 @@ form{
    Button
 ========================== */
 
-.searchWebsite-btn {
+button {
     height: 45px;
     padding: 0 22px;
 
@@ -450,3 +450,6 @@ footer{
     color: #8A93B2;
     font-size: 14px;
 }
+
+
+

@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/dashboard-modalAdd.css">
+    <script type="module" src="./scripts/dashboard-modal.js" defer></script>
+    <script type="module" src="./scripts/dashboard.js" defer></script>
 </head>
 
 <body>
@@ -67,17 +70,11 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input type="text" class="inputWebsite" placeholder="Search for a website...">
                     </div>
-                    <button class="searchWebsite-btn">
-                        <i class="fa-solid fa-plus"></i>
-                        Add a Website
-                    </button>
                 </form>
-                <select class="selectTime">
-                    <option>Today</option>
-                    <option>Last Week</option>
-                    <option>Last Month</option>
-                    <option>One Year</option>
-                </select>
+                <button class="addWebsite-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add a Website
+                </button>
             </div>
         </header>
         <main>
@@ -212,6 +209,28 @@
             </div>
         </footer>
     </div>
+    <section class="modal-container hidden">
+        <article class="modal-add-website">
+            <div class="modal-add-content">
+                <div class="modal-add-top">
+                    <h2>Add Website for monitoring</h2>
+                    <i class="fa-solid fa-xmark exit-cross"></i>
+                </div>
+                <form class="form-add-website">
+                    <label for="add-logo">
+                         <i class="fa-solid fa-upload"></i>
+                        <span>Choose a logo (optional)</span>
+                    </label>
+                    <input type="file" name="add-logo" id="add-logo" accept="image/*">
+                    <label for="add-name">Name</label>
+                    <input type="text" name="add-name" id="add-name" placeholder="Website name" required>
+                    <label for="add-url">Url</label>
+                    <input type="text" name="add-url" id="add-url" placeholder="Exemple www.sentrivo.fr" required>
+                    <button type="submit" class="addButton">Add Website</button>
+                </form>
+            </div>
+        </article>
+    </section>
 </body>
 
 </html>

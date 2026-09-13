@@ -33,14 +33,14 @@ console.log("Data :", data);
 
 if (response.ok) {
     console.log(data);
-    localStorage.setItem("accessToken", data.token);
+    localStorage.setItem("token", data.token);
     window.location.href = "/dashboard.html"
 } else {
     console.log(data);
     messageErrorAuth.classList.add("active");
 }
-    } catch {
-        //A faire message error server
+    } catch (error) {
+
     }
 
 })

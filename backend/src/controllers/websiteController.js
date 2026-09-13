@@ -2,7 +2,7 @@ import {pool} from "../database/connection.js"
 
 export async function getWebsites(req, res) {
     try {
-        const user_id = 1
+        const user_id = req.user.id;
         const result = await pool.query(
             "SELECT * FROM website WHERE user_id = $1",
             [user_id]
@@ -21,7 +21,7 @@ export async function addWebsites(req, res){
     try {
         const { name, url } = req.body;
         const logo = req.file ? `/uploads/websites/${req.file.filename}` : null;
-        const user_id = 1;
+        const user_id = req.user.id
         const result = await pool.query(
             `INSERT INTO website (user_id, name, url, logo)
             VALUES ($1, $2, $3, $4) RETURNING *`,

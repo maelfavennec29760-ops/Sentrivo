@@ -40,6 +40,7 @@ document.addEventListener("keydown", (event) => {
 //Form modal add
 
 formAddWebsite.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
     const logo = inputLogo.files[0];
     const name = inputName.value;

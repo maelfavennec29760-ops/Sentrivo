@@ -1,4 +1,4 @@
-console.log("v4")
+console.log("v5")
 const formLogin = document.getElementById("loginSentrivo");
 console.log(formLogin);
 const messageErrorAuth = document.querySelector(".container-errorAuth")
@@ -34,7 +34,7 @@ console.log("Data :", data);
 if (response.ok) {
     console.log(data);
     localStorage.setItem("token", data.token);
-    window.location.href = "/dashboard.html"
+    window.location.href = "/dashboard"
 } else {
     console.log(data);
     messageErrorAuth.classList.add("active");

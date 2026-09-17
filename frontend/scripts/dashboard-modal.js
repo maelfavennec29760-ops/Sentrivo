@@ -8,10 +8,7 @@ const inputLogo = document.getElementById("add-logo")
 const inputName = document.getElementById("add-name")
 const inputUrl = document.getElementById("add-url")
 
-console.log("modalAddBtn :", modalAddBtn);
-console.log("modalAddContainer :", modalAddContainer);
-console.log("exitCrossModal :", exitCrossModal);
-console.log("formAddWebsite :", formAddWebsite);
+import { displayWebsite } from "./dashboard.js";
 
 //Open | Close modal add website
 
@@ -30,12 +27,6 @@ document.addEventListener("keydown", (event) => {
         modalContainer.classList.add("hidden")
     }
 })
-
-// modalContainer.addEventListener("click", (event) => {
-//     if(event.target === modalContainer) {
-//         modalContainer.classList.add("hidden")
-//     }
-// })
 
 //Form modal add
 
@@ -75,6 +66,7 @@ formAddWebsite.addEventListener("submit", async (event) => {
 
         if (response.ok) {
             console.log("Website created");
+            displayWebsite(data);
         }
     } catch (error) {
         console.error("Erreur fetch :", error);

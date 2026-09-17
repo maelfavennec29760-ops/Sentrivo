@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="./css/dashboard.css">
     <link rel="stylesheet" href="./css/dashboard-modalAdd.css">
+    <link rel="stylesheet" href="./css/websites.css">
+    <script type="module" src="./scripts/router.js"></script>
     <script type="module" src="./scripts/dashboard-modal.js" defer></script>
-    <script type="module" src="./scripts/dashboard.js" defer></script>
 </head>
 
 <body>
@@ -23,11 +24,11 @@
             <h1>Sentrivo</h1>
         </div>
         <nav>
-            <a href="">
+            <a href="/dashboard">
                 <i class="fa-solid fa-display"></i>
                 <span>Dashboard</span>
             </a>
-            <a href="">
+            <a href="/websites" id="websites-link">
                 <i class="fa-brands fa-html5"></i>
                 <span>Websites</span>
             </a>
@@ -77,121 +78,7 @@
                 </button>
             </div>
         </header>
-        <main>
-            <section id="stats-section">
-                <article class="stats-card">
-                    <div class="stats-icon">
-                        <i class="fa-solid fa-heart-pulse"></i>
-                    </div>
-                    <div class="stats-content">
-                        <p class="stats-title">Online websites</p>
-                        <h2 class="stats-value">4 / 5</h2>
-                        <div class="stats-change">
-                            <span class="positive">↑ +0%</span>
-                                <span>vs. last week</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="stats-card">
-                    <div class="stats-icon">
-                        <i class="fa-regular fa-clock"></i>
-                    </div>
-                    <div class="stats-content">
-                        <p class="stats-title">Average response time</p>
-                        <h2 class="stats-value">342 ms</h2>
-                        <div class="stats-change">
-                            <span class="positive">↓ -12%</span>
-                                <span>vs. last week</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="stats-card">
-                    <div class="stats-icon">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                    </div>
-                    <div class="stats-content">
-                        <p class="stats-title">Incidents</p>
-                        <h2 class="stats-value">2</h2>
-                        <div class="stats-change">
-                            <span class="positive">↑ +100%</span>
-                                <span>vs. last week</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="stats-card">
-                    <div class="stats-icon">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                    <div class="stats-content">
-                        <p class="stats-title">Global uptime</p>
-                        <h2 class="stats-value">99.83%</h2>
-                        <div class="stats-change">
-                            <span class="positive">↑ +0.2%</span>
-                                <span>vs. last week</span>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <section id="global-info">
-                <article class="global-card">
-                    <div class="global-card-text">
-                        <h2>Your websites</h2>
-                        <select name="websit-select" id="websit-select">
-                            <option value="">All website</option>
-                            <option value="">*******</option>
-                            <option value="">*******</option>
-                            <option value="">*******</option>
-                        </select>
-                    </div>
-                    <div class="global-card-graph">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident temporibus aliquid quis minima dolorem obcaecati, quia fuga doloribus iste libero nemo atque officiis sit in eos quidem quam autem quasi.</p>
-                    </div>
-                </article>
-                <article class="global-card">
-                    <div class="global-card-text">
-                        <h2>Latest Incidents</h2>
-                        <select name="response-select" id="uptime-select">
-                            <option value="">All website</option>
-                            <option value="">*******</option>
-                            <option value="">*******</option>
-                            <option value="">*******</option>
-                        </select>
-                    </div>
-                    <div class="global-card-graph">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident temporibus aliquid quis minima dolorem obcaecati, quia fuga doloribus iste libero nemo atque officiis sit in eos quidem quam autem quasi.</p>
-                    </div>
-                </article>
-            </section>
-                        <section id="global-info">
-                <article class="global-card">
-                    <div class="global-card-text">
-                        <h2>Response time</h2>
-                        <select name="websit-select" id="websit-select">
-                            <option value="">All website</option>
-                            <option value="">*******</option>
-                            <option value="">*******</option>
-                            <option value="">*******</option>
-                        </select>
-                    </div>
-                    <div class="global-card-graph">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident temporibus aliquid quis minima dolorem obcaecati, quia fuga doloribus iste libero nemo atque officiis sit in eos quidem quam autem quasi.</p>
-                    </div>
-                </article>
-                <article class="global-card">
-                    <div class="global-card-text">
-                        <h2>Uptime</h2>
-                        <select name="response-select" id="uptime-select">
-                            <option value="">All website</option>
-                            <option value="">*******</option>
-                            <option value="">*******</option>
-                            <option value="">*******</option>
-                        </select>
-                    </div>
-                    <div class="global-card-graph">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident temporibus aliquid quis minima dolorem obcaecati, quia fuga doloribus iste libero nemo atque officiis sit in eos quidem quam autem quasi.</p>
-                    </div>
-                </article>
-            </section>
+        <main id="app">
         </main>
         <footer>
             <div class="footer-content">

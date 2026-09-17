@@ -5,7 +5,7 @@ import { upload } from "../middleware/upload.js"
 
 const routerWebsite = Router();
 
-routerWebsite.get("/", getWebsites);
+routerWebsite.get("/",authenticateToken, getWebsites);
 routerWebsite.post("/",authenticateToken, upload.single("logo"), addWebsites)
 
 export { routerWebsite };

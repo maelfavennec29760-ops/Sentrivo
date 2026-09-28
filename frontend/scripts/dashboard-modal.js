@@ -8,7 +8,12 @@ const inputLogo = document.getElementById("add-logo")
 const inputName = document.getElementById("add-name")
 const inputUrl = document.getElementById("add-url")
 
-import { displayWebsite } from "./dashboard.js";
+const dashboardList = document.getElementById("websites-list");
+const allWebsitesList = document.getElementById("all-websites-list");
+
+import { displayWebsite, getWebsites } from "./dashboard.js";
+import { displayWebsiteRow } from "./views/websiteView.js";
+import { updateWebsiteCounters } from "./views/websiteView.js";
 
 //Open | Close modal add website
 
@@ -66,7 +71,19 @@ formAddWebsite.addEventListener("submit", async (event) => {
 
         if (response.ok) {
             console.log("Website created");
-            displayWebsite(data);
+            if(dashboardList) {
+                displayWebsite(data)
+            }
+            else if(allWebsitesList) {
+                const websites = await getWebsites();
+                console.log("WEBSITES AFTER ADD:", websites);
+                const newWebsite = websites.find((website) => {
+                    return website.id === data.id
+                })
+                displayWebsiteRow(newWebsite);
+                console.log("UPDATE COUNTERS");
+                updateWebsiteCounters(websites)
+            }
         }
     } catch (error) {
         console.error("Erreur fetch :", error);

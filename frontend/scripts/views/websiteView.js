@@ -46,15 +46,15 @@ export async function renderWebsite() {
         </section>
     `
     const websites = await getWebsites();
+    console.log("WEBSITES :", websites);
     websites.forEach((website) => {
         displayWebsiteRow(website)
     });
-    const websitesCount = document.querySelector(".websites-count");
-    websitesCount.textContent = websites.length;
+    updateWebsiteCounters(websites)
 }
 
 
-function displayWebsiteRow(website) {
+export function displayWebsiteRow(website) {
     const allWebsitesList = document.getElementById("all-websites-list");
     const websiteRow = document.createElement("div");
     const date = new Date(website.created_at);
@@ -76,7 +76,7 @@ function displayWebsiteRow(website) {
             </div>
         </div>
         <span class="website-status">
-                Online
+                ${website.status}
         </span>
         <span class="website-date">
                 ${formattedDate}
@@ -85,11 +85,46 @@ function displayWebsiteRow(website) {
             <a class="website-action" href="${website.url}" target="_blank">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
-            <button class="website-action website-delete">
+            <button class="website-action website-delete" data-id="${website.id}">
                 <i class="fa-solid fa-trash"></i>
             </button>
         </div>      
         `;
     allWebsitesList.appendChild(websiteRow)
-    console.log(website.created_at);
+    const deleteButton = websiteRow.querySelector(".website-delete")
+    const token = localStorage.getItem("token")
+    deleteButton.addEventListener("click", async () => {
+        const websiteId = deleteButton.dataset.id
+        const response = await fetch(`/api/websites/${websiteId}`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        if(response.ok) {
+            websiteRow.remove()
+            const websites = await getWebsites()
+            updateWebsiteCounters(websites)
+        }
+    })
+}
+
+export function updateWebsiteCounters(websites) {
+    const websitesCount = document.querySelector(".websites-count");
+    websitesCount.textContent = websites.length;
+    const websitesOnline = document.querySelector(".websites-online");
+    const onlineWebsites = websites.filter((website) => {
+        return website.status === "online"
+    })
+    websitesOnline.textContent = onlineWebsites.length
+    const websitesOffline = document.querySelector(".websites-offline")
+    const offlineWebsites = websites.filter((website) => {
+        return website.status === "offline"
+    })
+    websitesOffline.textContent = offlineWebsites.length
+     console.log(
+        "ELEMENTS:",
+        websitesCount,
+        websitesOnline,
+        websitesOffline);
 }
